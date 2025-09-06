@@ -23,6 +23,7 @@ public class UpdateBase implements UpdateBaseInfo {
     private long mTimestamp;
     private String mType;
     private String mVersion;
+    private String mChangelog;
     private long mFileSize;
 
     public UpdateBase() {
@@ -35,6 +36,7 @@ public class UpdateBase implements UpdateBaseInfo {
         mTimestamp = update.getTimestamp();
         mType = update.getType();
         mVersion = update.getVersion();
+        mChangelog = update.getChangelog();
         mFileSize = update.getFileSize();
     }
 
@@ -81,6 +83,15 @@ public class UpdateBase implements UpdateBaseInfo {
 
     public void setVersion(String version) {
         mVersion = version;
+    }
+
+    @Override
+    public String getChangelog() {
+        return mChangelog;
+    }
+
+    public void setChangelog(String changelog) {
+        mChangelog = changelog;
     }
 
     @Override
