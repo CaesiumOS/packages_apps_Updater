@@ -283,8 +283,8 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
         viewHolder.mChangelog.setOnClickListener(view -> {
             new AlertDialog.Builder(mActivity)
-                    .setTitle(R.string.info_dialog_title)
-                    .setMessage(R.string.info_dialog_message)
+                    .setTitle(update.getVersion())
+                    .setMessage(update.getChangelog())
                     .setPositiveButton(android.R.string.ok, null)
                     .show();
         });
