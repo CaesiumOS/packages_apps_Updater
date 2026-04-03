@@ -96,6 +96,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final Button mAction;
+        private final Button mChangelog;
         private final ImageButton mMenu;
 
         private final TextView mBuildDate;
@@ -110,6 +111,7 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         public ViewHolder(final View view) {
             super(view);
             mAction = view.findViewById(R.id.update_action);
+            mChangelog = view.findViewById(R.id.changelog_btn);
             mMenu = view.findViewById(R.id.update_menu);
 
             mBuildDate = view.findViewById(R.id.build_date);
@@ -279,6 +281,13 @@ public class UpdatesListAdapter extends RecyclerView.Adapter<UpdatesListAdapter.
         viewHolder.mBuildDate.setText(buildDate);
         viewHolder.mBuildVersion.setText(buildVersion);
         viewHolder.mBuildVersion.setCompoundDrawables(null, null, null, null);
+        viewHolder.mChangelog.setOnClickListener(view -> {
+            new AlertDialog.Builder(mActivity)
+                    .setTitle(update.getVersion())
+                    .setMessage(update.getChangelog())
+                    .setPositiveButton(android.R.string.ok, null)
+                    .show();
+        });
 
         if (activeLayout) {
             handleActiveStatus(viewHolder, update);
