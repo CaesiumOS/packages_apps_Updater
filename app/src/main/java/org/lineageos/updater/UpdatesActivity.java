@@ -613,18 +613,6 @@ public class UpdatesActivity extends UpdatesListActivity implements UpdateImport
 
     private void setupHeaderButtons() {
         findViewById(R.id.refresh_button).setOnClickListener(v -> downloadUpdatesList(true));
-
-        findViewById(R.id.show_changelog_button).setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(getString(R.string.menu_changelog_url, DeviceInfoUtils.getDevice())));
-            startActivity(intent);
-        });
-
-        findViewById(R.id.report_issue_button).setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_VIEW,
-                    Uri.parse(getString(R.string.report_issue_url)));
-            startActivity(intent);
-        });
     }
 
     private void applyFilter() {
