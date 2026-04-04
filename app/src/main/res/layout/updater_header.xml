@@ -12,14 +12,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/SettingsLibEntityHeaderContent">
 
-    <TextView
-        android:id="@+id/header_build_date"
-        style="@style/SettingsLibEntityHeaderTitle"
-        android:textSize="@dimen/settingslib_collapsing_toolbar_expanded_title_size"
-        android:fontFamily="sans-serif-light"
-        tools:text="February 1, 2026"
-        tools:ignore="SpUsage" />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,14 +33,18 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="24dp"
-                android:baselineAlignBottom="true"
-                android:importantForAccessibility="no"
-                android:scaleType="fitCenter"
-                android:src="@drawable/lineage_mark_teal_tight"
-                app:tint="?attr/colorPrimary" />
+            <TextView
+                android:id="@+id/header_caesium_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif-light"
+                android:includeFontPadding="false"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="@dimen/settingslib_collapsing_toolbar_expanded_title_size"
+                android:text="CaesiumOS"
+                tools:ignore="SpUsage" />
 
             <TextView
                 android:id="@+id/header_lineage_version"
@@ -62,6 +58,15 @@
                 android:textSize="@dimen/settingslib_collapsing_toolbar_expanded_title_size"
                 tools:text="23.2"
                 tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/header_release_channel"
+                style="@style/TextAppearance.EntityHeaderSummary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textColor="?android:attr/textColorPrimary"
+                android:text="Canary" />
 
             <View
                 android:layout_width="1dp"
@@ -105,59 +110,19 @@
             tools:text="Android security update:\nFebruary 1, 2026" />
 
         <TextView
+        android:id="@+id/header_build_date"
+        style="@style/TextAppearance.EntityHeaderSummary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="February 1, 2026"
+        tools:ignore="SpUsage" />
+
+        <TextView
             android:id="@+id/header_last_check"
             style="@style/TextAppearance.EntityHeaderSummary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Last checked:\nFebruary 1, 2026 12:00 PM"
             tools:textColor="@color/settingslib_colorBackgroundLevel_low" />
-    </LinearLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/settingslib_expressive_space_small1" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/refresh_button"
-        style="@style/SettingsLibButtonStyle.Expressive.Tonal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/check_for_updates"
-        android:textColor="@android:color/white"
-        app:backgroundTint="@color/brand_accent" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/settingslib_expressive_space_small1" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/show_changelog_button"
-            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/show_changelog"
-            android:textColor="@android:color/white"
-            app:backgroundTint="@color/brand_accent" />
-
-        <Space
-            android:layout_width="@dimen/settingslib_expressive_space_small1"
-            android:layout_height="wrap_content" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/report_issue_button"
-            style="@style/SettingsLibButtonStyle.Expressive.Tonal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/report_issues"
-            android:textColor="@android:color/white"
-            app:backgroundTint="@color/brand_accent" />
-
     </LinearLayout>
 </LinearLayout>
